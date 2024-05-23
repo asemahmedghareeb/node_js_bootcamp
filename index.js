@@ -19,6 +19,9 @@ app.use(cors());
 app.use(express.json());
 //this is for preview the uploads
 //this middleware will tell the server to use the uploads folder for static files 
+app.use('/',(req,res) => { 
+    res.json("welcome to our Api");
+})
 app.use('/uploads',express.static(path.join(__dirname, '/uploads')));
 app.use('/api/courses', coursesRouter);
 app.use('/api/users', usersRouter);
