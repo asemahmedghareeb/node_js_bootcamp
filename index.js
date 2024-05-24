@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 //this is for preview the uploads
 //this middleware will tell the server to use the uploads folder for static files 
-app.use('/',(req,res) => { 
+app.get('/',(req,res) => { 
     res.json("welcome to our Api");
 })
 app.use('/uploads',express.static(path.join(__dirname, '/uploads')));
@@ -42,7 +42,7 @@ mongoose.connect(url).then(() => {
  
 //topics in the bootcamp:-
 
-//rest api crud operations
+//rest api crud operations using mongoose and express
 //authentication    
 //authorization (role based)
 //error handling     
